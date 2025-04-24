@@ -25,7 +25,7 @@ const addToCart = document.getElementById("addToCart");
 const purchase = document.getElementById("purchase");
 
 const viewItem = () => {
-  gtag("event", "view_item", {
+  gtag("event", "viewItem", {
     currency: "KRW",
     value: 129000,
     items: [
@@ -40,3 +40,39 @@ const viewItem = () => {
   });
 };
 viewItemBtn.addEventListener("click", viewItem);
+
+const add_to_cart = () => {
+  gtag("event", "add_to_cart", {
+    currency: "KRW",
+    value: 129000,
+    items: [
+      {
+        item_id: "EP1001",
+        item_name: "무선 이어폰",
+        currency: "KRW",
+        price: 129000,
+        quantity: 1,
+      },
+    ],
+  });
+  alert("addToCart 이벤트 발생");
+};
+addToCart.addEventListener("click", add_to_cart);
+
+const Purchase = () => {
+  gtag("event", "Purchase", {
+    currency: "KRW",
+    value: 129000,
+    items: [
+      {
+        item_id: "EP1001",
+        item_name: "무선 이어폰",
+        currency: "KRW",
+        price: 129000,
+        quantity: 1,
+      },
+    ],
+  });
+  alert("purchase 이벤트 발생");
+};
+purchase.addEventListener("click", Purchase);
